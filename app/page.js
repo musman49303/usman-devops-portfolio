@@ -50,7 +50,7 @@ const experience = [
     ],
   },
   {
-    role: 'Intern',
+    role: 'Internship',
     company: 'Northbay Solutions',
     period: '09/2022 - 12/2022',
     points: [
@@ -87,6 +87,14 @@ const projects = [
   {
     title: 'Monitoring Stack Deployment',
     description: 'Set up and maintained a full monitoring solution using Prometheus and Grafana for real-time tracking of on-premises infrastructure, with alerts and dashboards to proactively identify issues.',
+  },
+  {
+    title: 'Prometheus + Grafana Server Monitoring',
+    description: 'Deployed Prometheus exporters and Grafana dashboards across multiple servers for real-time metrics, custom alerting rules and centralized visibility into CPU, memory, disk and network health.',
+  },
+  {
+    title: 'AI Agent for Server Behavior Verification',
+    description: 'Deployed an AI-driven agent across different servers to continuously analyze logs and metrics, verify expected server behavior and flag anomalies before they impact production.',
   },
   {
     title: 'Cloud Migration Support',
