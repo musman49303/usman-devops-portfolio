@@ -1,3 +1,5 @@
+import Reveal from './components/Reveal';
+
 const experience = [
   {
     role: 'DevOps Engineer',
@@ -104,8 +106,18 @@ const personJsonLd = {
     addressLocality: 'Lahore',
     addressCountry: 'PK',
   },
-  sameAs: ['https://linkedin.com/in/muhammad-usman-devops-engineer'],
+  sameAs: [
+    'https://linkedin.com/in/muhammad-usman-devops-engineer',
+    'https://github.com/musman49303',
+  ],
   knowsAbout: ['AWS', 'Azure', 'Kubernetes', 'Docker', 'Terraform', 'CI/CD', 'DevOps', 'Site Reliability Engineering', 'Fortinet Firewall', 'Node.js', 'Next.js', '.NET', 'SQL Server', 'PostgreSQL'],
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Muhammad Usman - DevOps Engineer',
+  url: 'https://aiusmandevops.shop',
 };
 
 export default function Home() {
@@ -114,6 +126,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
 
       <nav className="nav">
@@ -139,6 +155,7 @@ export default function Home() {
             <span>m.usman49303@gmail.com</span>
             <span>+92 340 7136303</span>
             <a href="https://wa.me/923407136303" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href="https://github.com/musman49303" target="_blank" rel="noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/muhammad-usman-devops-engineer" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
           <div className="hero-cta">
@@ -150,34 +167,40 @@ export default function Home() {
 
       <section id="about">
         <div className="container">
-          <p className="section-title">About</p>
-          <h2 className="section-heading">Profile</h2>
-          <p className="about-text">
-            Skilled DevOps Engineer with 3+ years of experience in cloud solutions, data center management and DevOps tooling. Strong background in AWS, Azure, Docker, Kubernetes and system monitoring, with a proven track record of managing infrastructure, improving deployment processes and strengthening system security and performance. Experienced in physical data center operations, including physical web, application and database servers, as well as network security using Fortinet Firewall and FortiAnalyzer, and deploying Node.js, Next.js and .NET applications backed by SQL Server and PostgreSQL.
-          </p>
+          <Reveal>
+            <p className="section-title">About</p>
+            <h2 className="section-heading">Profile</h2>
+            <p className="about-text">
+              Skilled DevOps Engineer with 3+ years of experience in cloud solutions, data center management and DevOps tooling. Strong background in AWS, Azure, Docker, Kubernetes and system monitoring, with a proven track record of managing infrastructure, improving deployment processes and strengthening system security and performance. Experienced in physical data center operations, including physical web, application and database servers, as well as network security using Fortinet Firewall and FortiAnalyzer, and deploying Node.js, Next.js and .NET applications backed by SQL Server and PostgreSQL.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       <section id="experience">
         <div className="container">
-          <p className="section-title">Career</p>
-          <h2 className="section-heading">Professional Experience</h2>
+          <Reveal>
+            <p className="section-title">Career</p>
+            <h2 className="section-heading">Professional Experience</h2>
+          </Reveal>
           <div className="timeline">
             {experience.map((job) => (
-              <div className="timeline-item" key={job.company + job.period}>
-                <div className="timeline-head">
-                  <div>
-                    <div className="timeline-role">{job.role}</div>
-                    <div className="timeline-company">{job.company}</div>
+              <Reveal key={job.company + job.period}>
+                <div className="timeline-item">
+                  <div className="timeline-head">
+                    <div>
+                      <div className="timeline-role">{job.role}</div>
+                      <div className="timeline-company">{job.company}</div>
+                    </div>
+                    <div className="timeline-period">{job.period}</div>
                   </div>
-                  <div className="timeline-period">{job.period}</div>
+                  <ul>
+                    {job.points.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
                 </div>
-                <ul>
-                  {job.points.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -185,18 +208,22 @@ export default function Home() {
 
       <section id="skills">
         <div className="container">
-          <p className="section-title">Toolbox</p>
-          <h2 className="section-heading">Skills</h2>
+          <Reveal>
+            <p className="section-title">Toolbox</p>
+            <h2 className="section-heading">Skills</h2>
+          </Reveal>
           <div className="skills-grid">
             {skillGroups.map((group) => (
-              <div className="skill-card" key={group.category}>
-                <h3>{group.category}</h3>
-                <div className="skill-tags">
-                  {group.items.map((item) => (
-                    <span className="tag" key={item}>{item}</span>
-                  ))}
+              <Reveal key={group.category}>
+                <div className="skill-card">
+                  <h3>{group.category}</h3>
+                  <div className="skill-tags">
+                    {group.items.map((item) => (
+                      <span className="tag" key={item}>{item}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -204,36 +231,46 @@ export default function Home() {
 
       <section id="certifications">
         <div className="container">
-          <p className="section-title">Credentials</p>
-          <h2 className="section-heading">Certifications & Education</h2>
+          <Reveal>
+            <p className="section-title">Credentials</p>
+            <h2 className="section-heading">Certifications & Education</h2>
+          </Reveal>
           <div className="cards-2">
-            <div className="info-card">
-              <h3>Certifications</h3>
-              {certifications.map((cert) => (
-                <p key={cert}>{cert}</p>
-              ))}
-            </div>
-            <div className="info-card">
-              <h3>Education</h3>
-              <p><strong>BS in Computer Science</strong></p>
-              <p>The Islamia University Bahawalpur</p>
-              <p>02/2018 - 02/2022, CGPA 3.63</p>
-              <p>Bahawalpur, Pakistan</p>
-            </div>
+            <Reveal>
+              <div className="info-card">
+                <h3>Certifications</h3>
+                {certifications.map((cert) => (
+                  <p key={cert}>{cert}</p>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="info-card">
+                <h3>Education</h3>
+                <p><strong>BS in Computer Science</strong></p>
+                <p>The Islamia University Bahawalpur</p>
+                <p>02/2018 - 02/2022, CGPA 3.63</p>
+                <p>Bahawalpur, Pakistan</p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       <section id="projects">
         <div className="container">
-          <p className="section-title">Highlights</p>
-          <h2 className="section-heading">Projects</h2>
+          <Reveal>
+            <p className="section-title">Highlights</p>
+            <h2 className="section-heading">Projects</h2>
+          </Reveal>
           <div className="projects-grid">
             {projects.map((project) => (
-              <div className="project-card" key={project.title}>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-              </div>
+              <Reveal key={project.title}>
+                <div className="project-card">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -241,29 +278,47 @@ export default function Home() {
 
       <section id="contact">
         <div className="container">
-          <p className="section-title">Get in touch</p>
-          <h2 className="section-heading">Contact</h2>
+          <Reveal>
+            <p className="section-title">Get in touch</p>
+            <h2 className="section-heading">Contact</h2>
+          </Reveal>
           <div className="contact-grid">
-            <div className="contact-card">
-              <div className="label">Email</div>
-              <div className="value">m.usman49303@gmail.com</div>
-            </div>
-            <div className="contact-card">
-              <div className="label">Phone</div>
-              <div className="value">+92 340 7136303</div>
-            </div>
-            <div className="contact-card">
-              <div className="label">WhatsApp</div>
-              <div className="value"><a href="https://wa.me/923407136303" target="_blank" rel="noreferrer">Chat Now</a></div>
-            </div>
-            <div className="contact-card">
-              <div className="label">Location</div>
-              <div className="value">Lahore, Pakistan</div>
-            </div>
-            <div className="contact-card">
-              <div className="label">LinkedIn</div>
-              <div className="value"><a href="https://linkedin.com/in/muhammad-usman-devops-engineer" target="_blank" rel="noreferrer">Profile</a></div>
-            </div>
+            <Reveal>
+              <div className="contact-card">
+                <div className="label">Email</div>
+                <div className="value">m.usman49303@gmail.com</div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="contact-card">
+                <div className="label">Phone</div>
+                <div className="value">+92 340 7136303</div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="contact-card">
+                <div className="label">WhatsApp</div>
+                <div className="value"><a href="https://wa.me/923407136303" target="_blank" rel="noreferrer">Chat Now</a></div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="contact-card">
+                <div className="label">GitHub</div>
+                <div className="value"><a href="https://github.com/musman49303" target="_blank" rel="noreferrer">musman49303</a></div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="contact-card">
+                <div className="label">Location</div>
+                <div className="value">Lahore, Pakistan</div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="contact-card">
+                <div className="label">LinkedIn</div>
+                <div className="value"><a href="https://linkedin.com/in/muhammad-usman-devops-engineer" target="_blank" rel="noreferrer">Profile</a></div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
