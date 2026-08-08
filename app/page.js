@@ -111,6 +111,7 @@ export default function Home() {
             <span>Lahore, Pakistan</span>
             <span>m.usman49303@gmail.com</span>
             <span>+92 340 7136303</span>
+            <a href="https://wa.me/923407136303" target="_blank" rel="noreferrer">WhatsApp</a>
             <a href="https://linkedin.com/in/muhammad-usman-devops-engineer" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
           <div className="hero-cta">
@@ -223,6 +224,10 @@ export default function Home() {
             <div className="contact-card">
               <div className="label">Phone</div>
               <div className="value">+92 340 7136303</div>
+            </div>
+            <div className="contact-card">
+              <div className="label">WhatsApp</div>
+              <div className="value"><a href="https://wa.me/923407136303" target="_blank" rel="noreferrer">Chat Now</a></div>
             </div>
             <div className="contact-card">
               <div className="label">Location</div>
