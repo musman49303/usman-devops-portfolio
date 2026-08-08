@@ -25,6 +25,9 @@ const experience = [
     points: [
       'Designed and maintained CI/CD pipelines using Azure DevOps for fast and reliable deployments.',
       'Containerized applications using Docker and managed them through Kubernetes.',
+      'Deployed and managed Node.js, Next.js and .NET applications in production, backed by SQL Server and PostgreSQL databases.',
+      'Managed physical data center infrastructure, including physical web, application and database servers.',
+      'Administered Fortinet firewalls and FortiAnalyzer for network security, traffic monitoring and log analysis.',
       'Monitored on-premise data centers using Prometheus and Grafana, applying cloud-based monitoring strategies.',
       'Collaborated closely with development teams to roll out releases smoothly and handle infrastructure-level updates.',
       'Integrated version control with deployment processes for better visibility and rollback capabilities.',
@@ -59,11 +62,13 @@ const experience = [
 const skillGroups = [
   { category: 'Cloud Platforms', items: ['AWS', 'Azure'] },
   { category: 'DevOps & Automation', items: ['Docker', 'Kubernetes', 'GitHub Actions', 'Terraform'] },
+  { category: 'Application Deployment', items: ['Node.js', 'Next.js', '.NET', 'SQL Server', 'PostgreSQL'] },
+  { category: 'Data Center & Physical Infrastructure', items: ['Physical Web Servers', 'Application Servers', 'Database Servers', 'Rack Configuration'] },
+  { category: 'Network Security', items: ['Fortinet Firewall', 'FortiAnalyzer', 'IAM', 'SSH', 'Firewalls'] },
   { category: 'Monitoring & Logging', items: ['Prometheus', 'Grafana', 'CloudWatch', 'ELK Stack'] },
-  { category: 'Databases', items: ['MySQL', 'PostgreSQL', 'Backup & Recovery'] },
-  { category: 'Security', items: ['IAM', 'SSH', 'Server Access Tools', 'Firewalls'] },
+  { category: 'Databases', items: ['MySQL', 'PostgreSQL', 'SQL Server', 'Backup & Recovery'] },
   { category: 'OS & Scripting', items: ['Linux (Ubuntu)', 'Windows Server', 'Python (basic)'] },
-  { category: 'Networking', items: ['VPN', 'DNS', 'Load Balancers', 'Rack Configuration'] },
+  { category: 'Networking', items: ['VPN', 'DNS', 'Load Balancers'] },
 ];
 
 const certifications = [
@@ -100,7 +105,7 @@ const personJsonLd = {
     addressCountry: 'PK',
   },
   sameAs: ['https://linkedin.com/in/muhammad-usman-devops-engineer'],
-  knowsAbout: ['AWS', 'Azure', 'Kubernetes', 'Docker', 'Terraform', 'CI/CD', 'DevOps', 'Site Reliability Engineering'],
+  knowsAbout: ['AWS', 'Azure', 'Kubernetes', 'Docker', 'Terraform', 'CI/CD', 'DevOps', 'Site Reliability Engineering', 'Fortinet Firewall', 'Node.js', 'Next.js', '.NET', 'SQL Server', 'PostgreSQL'],
 };
 
 export default function Home() {
@@ -148,7 +153,7 @@ export default function Home() {
           <p className="section-title">About</p>
           <h2 className="section-heading">Profile</h2>
           <p className="about-text">
-            Skilled DevOps Engineer with 3+ years of experience in cloud solutions, data center management and DevOps tooling. Strong background in AWS, Azure, Docker, Kubernetes and system monitoring, with a proven track record of managing infrastructure, improving deployment processes and strengthening system security and performance.
+            Skilled DevOps Engineer with 3+ years of experience in cloud solutions, data center management and DevOps tooling. Strong background in AWS, Azure, Docker, Kubernetes and system monitoring, with a proven track record of managing infrastructure, improving deployment processes and strengthening system security and performance. Experienced in physical data center operations, including physical web, application and database servers, as well as network security using Fortinet Firewall and FortiAnalyzer, and deploying Node.js, Next.js and .NET applications backed by SQL Server and PostgreSQL.
           </p>
         </div>
       </section>
