@@ -86,9 +86,31 @@ const projects = [
   },
 ];
 
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Muhammad Usman',
+  jobTitle: 'DevOps Engineer',
+  url: 'https://aiusmandevops.shop',
+  email: 'mailto:m.usman49303@gmail.com',
+  telephone: '+923407136303',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Lahore',
+    addressCountry: 'PK',
+  },
+  sameAs: ['https://linkedin.com/in/muhammad-usman-devops-engineer'],
+  knowsAbout: ['AWS', 'Azure', 'Kubernetes', 'Docker', 'Terraform', 'CI/CD', 'DevOps', 'Site Reliability Engineering'],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+
       <nav className="nav">
         <div className="nav-inner">
           <span className="logo">Muhammad Usman</span>
