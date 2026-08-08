@@ -1,4 +1,5 @@
 import Reveal from './components/Reveal';
+import TiltCard from './components/TiltCard';
 
 const experience = [
   {
@@ -146,6 +147,26 @@ export default function Home() {
       </nav>
 
       <header className="hero">
+        <div className="hero-3d hero-3d-a" aria-hidden="true">
+          <div className="cube">
+            <div className="face front"></div>
+            <div className="face back"></div>
+            <div className="face right"></div>
+            <div className="face left"></div>
+            <div className="face top"></div>
+            <div className="face bottom"></div>
+          </div>
+        </div>
+        <div className="hero-3d hero-3d-b" aria-hidden="true">
+          <div className="cube">
+            <div className="face front"></div>
+            <div className="face back"></div>
+            <div className="face right"></div>
+            <div className="face left"></div>
+            <div className="face top"></div>
+            <div className="face bottom"></div>
+          </div>
+        </div>
         <div className="container">
           <p className="hero-eyebrow">DevOps Engineer</p>
           <h1>Muhammad Usman</h1>
@@ -186,7 +207,7 @@ export default function Home() {
           <div className="timeline">
             {experience.map((job) => (
               <Reveal key={job.company + job.period}>
-                <div className="timeline-item">
+                <TiltCard className="timeline-item">
                   <div className="timeline-head">
                     <div>
                       <div className="timeline-role">{job.role}</div>
@@ -199,7 +220,7 @@ export default function Home() {
                       <li key={i}>{point}</li>
                     ))}
                   </ul>
-                </div>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
@@ -215,14 +236,14 @@ export default function Home() {
           <div className="skills-grid">
             {skillGroups.map((group) => (
               <Reveal key={group.category}>
-                <div className="skill-card">
+                <TiltCard className="skill-card">
                   <h3>{group.category}</h3>
                   <div className="skill-tags">
                     {group.items.map((item) => (
                       <span className="tag" key={item}>{item}</span>
                     ))}
                   </div>
-                </div>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
@@ -237,21 +258,21 @@ export default function Home() {
           </Reveal>
           <div className="cards-2">
             <Reveal>
-              <div className="info-card">
+              <TiltCard className="info-card">
                 <h3>Certifications</h3>
                 {certifications.map((cert) => (
                   <p key={cert}>{cert}</p>
                 ))}
-              </div>
+              </TiltCard>
             </Reveal>
             <Reveal>
-              <div className="info-card">
+              <TiltCard className="info-card">
                 <h3>Education</h3>
                 <p><strong>BS in Computer Science</strong></p>
                 <p>The Islamia University Bahawalpur</p>
                 <p>02/2018 - 02/2022, CGPA 3.63</p>
                 <p>Bahawalpur, Pakistan</p>
-              </div>
+              </TiltCard>
             </Reveal>
           </div>
         </div>
@@ -266,10 +287,10 @@ export default function Home() {
           <div className="projects-grid">
             {projects.map((project) => (
               <Reveal key={project.title}>
-                <div className="project-card">
+                <TiltCard className="project-card">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                </div>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
@@ -284,40 +305,40 @@ export default function Home() {
           </Reveal>
           <div className="contact-grid">
             <Reveal>
-              <div className="contact-card">
+              <TiltCard className="contact-card">
                 <div className="label">Email</div>
                 <div className="value">m.usman49303@gmail.com</div>
-              </div>
+              </TiltCard>
             </Reveal>
             <Reveal>
-              <div className="contact-card">
+              <TiltCard className="contact-card">
                 <div className="label">Phone</div>
                 <div className="value">+92 340 7136303</div>
-              </div>
+              </TiltCard>
             </Reveal>
             <Reveal>
-              <div className="contact-card">
+              <TiltCard className="contact-card">
                 <div className="label">WhatsApp</div>
                 <div className="value"><a href="https://wa.me/923407136303" target="_blank" rel="noreferrer">Chat Now</a></div>
-              </div>
+              </TiltCard>
             </Reveal>
             <Reveal>
-              <div className="contact-card">
+              <TiltCard className="contact-card">
                 <div className="label">GitHub</div>
                 <div className="value"><a href="https://github.com/musman49303" target="_blank" rel="noreferrer">musman49303</a></div>
-              </div>
+              </TiltCard>
             </Reveal>
             <Reveal>
-              <div className="contact-card">
+              <TiltCard className="contact-card">
                 <div className="label">Location</div>
                 <div className="value">Lahore, Pakistan</div>
-              </div>
+              </TiltCard>
             </Reveal>
             <Reveal>
-              <div className="contact-card">
+              <TiltCard className="contact-card">
                 <div className="label">LinkedIn</div>
                 <div className="value"><a href="https://linkedin.com/in/muhammad-usman-devops-engineer" target="_blank" rel="noreferrer">Profile</a></div>
-              </div>
+              </TiltCard>
             </Reveal>
           </div>
         </div>
